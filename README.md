@@ -1,4 +1,4 @@
-# Redux Thunk example
+# SECRET PIZZA DAPP
 
 This example shows how to integrate Redux and Redux Thunk in Next.js.
 

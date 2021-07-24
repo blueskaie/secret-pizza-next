@@ -1,0 +1,60 @@
+@import '../variables';
+
+.notificationContainer {
+    position: absolute;
+    width: calc(100% - 200px);
+    min-width: 570px;
+    height: auto;
+    display: flex;
+    .notificationWrapper {
+      display: flex;
+      width: 100%;
+      margin: 10px;
+      padding: 10px;
+      background: rgba(80, 17, 3, 0.75);
+      border: 2px solid rgba(255, 255, 255, 0.63);
+      border-radius: 10px;
+      font-size: 24px;
+      color: white;
+      align-self: baseline;
+      position: relative;
+
+      .message {
+          padding: 5px 30px 5px 90px;
+          color: gray;
+          background-color: transparent;
+          font-size: 16px;
+      }
+      .closeButton {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        color: gray;
+      }
+      .notificationMarkWrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: gray;
+        height: 100%;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+        display: flex;
+        padding: 0 20px;
+        .infoMark {
+          align-self: center;
+          color: white;
+          padding: 0 10px;
+          border: 2px solid white;
+          border-radius: 50%;
+        }
+      }
+    }
+}
+
+@media (max-width: 670px) {
+    .notificationContainer {
+        position: absolute;
+        width: 100%
+    }
+}

@@ -1,0 +1,15 @@
+@import '../variables';
+
+.donateContainer {
+  background-image: url("/img/background.png");
+  background-size:cover;
+  height: calc(100vh - 217px);
+  min-height: 370px;
+}
+@media (max-width: 670px) {
+  .donateContainer {
+    left: -210px;
+    width: 100%;
+    margin-left: 0;
+  }
+}

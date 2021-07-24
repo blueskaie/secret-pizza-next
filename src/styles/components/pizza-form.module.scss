@@ -1,0 +1,154 @@
+@import '../variables';
+.pizzaFormContainer {
+    width: 100%;
+    min-width: 570px;
+    min-height: 247px;
+    display: flex;
+    justify-content: center;
+    margin-top: 180px;
+    // align-self: center;
+    .pizzaFormWrapper {
+      width: 576px;
+      height: 247px;
+      margin: 10px 10px;
+      background: #FFFFFF;
+      border: 4px solid #501103;
+      box-sizing: border-box;
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      flex-direction: column;
+      padding: 0 30px 30px 30px;
+      position: relative;
+      .withdrawTab {
+        cursor: pointer;
+        position: absolute;
+        top: -44px;
+        width: 150px;
+        height: 40px;
+        left: -4px;
+        font-size: 24px;
+        color: #FFFFFF;
+        border-top-left-radius: 10px;
+        display: flex;
+        justify-content: center;
+        p {
+          margin: 0;
+          align-self: center;
+        }
+        .obliqueActive {
+          position: absolute;
+          right: -40px;
+          width: 0;
+          height: 0;
+          border: 20px solid #F86813;
+          border-right: 20px solid transparent;
+          border-top: 20px solid transparent;
+        }
+        .obliqueInActive {
+          position: absolute;
+          right: -40px;
+          width: 0;
+          height: 0;
+          border: 20px solid #501103;
+          border-right: 20px solid transparent;
+          border-top: 20px solid transparent;
+        }
+      }
+      .donateTab {
+        cursor: pointer;
+        position: absolute;
+        top: -44px;
+        width: 150px;
+        height: 40px;
+        right: -4px;
+        font-size: 24px;
+        color: #FFFFFF;
+        border-top-right-radius: 10px;
+        display: flex;
+        justify-content: center;
+        p {
+          margin: 0;
+          align-self: center;
+        }
+        .obliqueActive {
+          position: absolute;
+          left: -40px;
+          width: 0;
+          height: 0;
+          border: 20px solid #501103;
+          border-left: 20px solid transparent;
+          border-top: 20px solid transparent;
+        }
+        .obliqueInActive {
+          position: absolute;
+          left: -40px;
+          width: 0;
+          height: 0;
+          border: 20px solid #F86813;
+          border-left: 20px solid transparent;
+          border-top: 20px solid transparent;
+        }
+      }      
+      .active {
+        background: #F86813;
+      }
+      .inActive {
+        background: #501103;
+      }
+      .titleWrapper {
+        flex: 1;
+        display: flex;
+        .title {
+          align-self: center;
+          text-align: left;
+          width: 100%;
+          font-weight: bold;
+          font-size: 24px;
+        }
+      }
+      .inputWrapper {
+        flex: 1;
+        .input {
+          width: 100%;
+          background: #C9B3AC;
+          border-radius: 10px;
+          height: 58px;
+          display: flex;
+          .content {
+            height: 50px;
+            width: 90%;
+            border: none;
+            outline: none;
+            background-color: #C9B3AC;
+            margin-left: 10px;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 24px;
+            align-self: center;
+          }
+        }
+      }
+      .balanceWrapper {
+        text-align: right;
+        color: #A57F73;
+        font-size: 18px;
+        font-weight: bold;
+        span {
+          color: #501103;
+        }
+        padding-bottom: 10px;
+      }
+      .buttonWrapper {
+        flex: 1;
+        .withdrawButton {
+          cursor: pointer;
+          width: 100%;
+          background: #F86813;
+          border-radius: 10px;
+          font-weight: bold;
+          font-size: 24px;
+          height: 58px;
+        }
+      }
+    }
+  }

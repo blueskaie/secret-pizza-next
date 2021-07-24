@@ -1,0 +1,19 @@
+@import '../variables';
+
+.mainContainer {
+  margin: 0 0 0 200px;
+  width: calc(100wh);
+  min-width: 640px;
+  height: calc(100vh - 217px);
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 670px) {
+  .mainContainer {
+    left: -210px;
+    width: 100%;
+    margin-left: 0;
+    height: calc(100vh);
+  }
+}

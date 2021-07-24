@@ -1,0 +1,62 @@
+@import '../variables';
+
+.navBarWrapper {
+  // position: fixed;
+  top: 0;
+  background-color: $NavBarBackground;
+  width: calc(100%-210px);
+  min-width: 600px;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 0 0 40px 40px;
+  .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 24px;
+    text-align: left;
+    padding: 40px 0;
+  }
+  .detail {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .detailItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 200px;
+      .subTitle {
+        font-size: 20px;
+        text-align: left;
+        font-weight: 100;
+      }
+      .value {
+        display: flex;
+        margin-top: 5px;
+        .number {
+          font-size: 36px;
+          align-self: flex-end;
+          font-weight: 700;
+        }
+        .text {
+          margin-left: 10px;
+          margin-bottom: 5px;
+          font-weight: 700;
+          font-size: 24px;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 670px) {
+  .navBarWrapper {
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 0;
+  }
+}

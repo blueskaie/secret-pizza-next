@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import * as styles from '../styles/components/pizza-form.module.scss';
 import { useSelector, useDispatch } from 'react-redux'
-import { openNotification, closeNotification } from '../actions'
+import { openNotification, sendDonate, getPoolData } from '../actions'
+import * as utils from '../utils';
 
 const PizzaForm = ({tab}) => {
     const dispatch = useDispatch();
@@ -16,10 +17,7 @@ const PizzaForm = ({tab}) => {
     useEffect(()=>{
         if (wallet) {
             setAddress(wallet.address);
-            if (wallet.balance) {
-                let balance = wallet.balance.find((b)=>b.denom == "uscrt");
-                setBalance(balance?.amount / 1000000);
-            }
+            setBalance(utils.getBalance(wallet, "uscrt"))
         }
     }, [wallet]);
 
@@ -36,7 +34,13 @@ const PizzaForm = ({tab}) => {
     }
 
     const donate = (e) => {
-        dispatch(openNotification("Thank you for your contribution... You make Secret Pizza Parior possible"));
+        console.log("donateAmount=====>", donateAmount);
+        if (donateAmount!=balance) {
+            dispatch(sendDonate(donateAmount*1000000));
+        } else {
+            dispatch(openNotification("The amount is beyond the balance."));
+        }
+        
     }
 
     return (
@@ -80,7 +84,7 @@ const PizzaForm = ({tab}) => {
                     </div>
                     <div className={styles.inputWrapper}>
                         <div className={styles.input}>
-                            <input className={styles.content} type="text" onChange={onDonateChange} value={donateAmount} placeholder={'Please input the donate amount'} />
+                            <input className={styles.content} type="number" onChange={onDonateChange} value={donateAmount} placeholder={'Please input the donate amount'} />
                         </div>
                     </div>
                     <div className={styles.balanceWrapper}>

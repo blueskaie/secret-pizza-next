@@ -2,43 +2,43 @@
 
 .notificationContainer {
     position: absolute;
-    width: calc(100% - 200px);
+    width: calc(100% - 224px);
     min-width: 570px;
     height: auto;
     display: flex;
     .notificationWrapper {
       display: flex;
       width: 100%;
-      margin: 10px;
+      height: 63px;
+      margin: 12px 25px;
       padding: 10px;
-      background: rgba(80, 17, 3, 0.75);
-      border: 2px solid rgba(255, 255, 255, 0.63);
-      border-radius: 10px;
+      background: #FFFFFF;
+      border-radius: 10px 10px 10px 0;
       font-size: 24px;
       color: white;
-      align-self: baseline;
+      align-items: center;
       position: relative;
 
       .message {
           padding: 5px 30px 5px 90px;
-          color: gray;
-          background-color: transparent;
-          font-size: 16px;
+          color: #000000;
+          font-size: 24px;
       }
       .closeButton {
         cursor: pointer;
         position: absolute;
-        right: 10px;
+        right: 30px;
+        top: 27px;
         color: gray;
       }
       .notificationMarkWrapper {
         position: absolute;
         left: 0;
         top: 0;
-        background-color: gray;
-        height: 100%;
-        border-top-left-radius: 7px;
-        border-bottom-left-radius: 7px;
+        background-color: #838383;
+        height: calc(100% - 10px);
+        border: 5px solid #C9B3AC;
+        border-radius: 10px 10px 0 0;
         display: flex;
         padding: 0 20px;
         .infoMark {

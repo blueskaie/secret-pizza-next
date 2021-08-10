@@ -49,6 +49,61 @@ const poolReducer = (state = {}, action) => {
     }
 }
 
+// TRANSACTION REDUCER
+const transactionReducer = (state = {}, action) => {
+    switch (action.type) {
+        case types.TX_REQUEST:
+            return {
+                is_loading: true
+            }
+        case types.TX_LIST_SUCCESS:
+            return {
+                is_loading: false,
+                list: [...action.payload],
+                error: null
+            }
+        case types.TX_ADD_SUCCESS:
+            return {
+                is_loading: false,
+                list: [...list, action.payload],
+                error: null
+            }
+        case types.TX_FAILURE:
+            return {
+                is_loading: false,
+                list: [],
+                error: action.error
+            }
+        default:
+            return state
+    }
+}
+
+// DONOR REDUCER
+const donorReducer = (state = {}, action) => {
+    switch (action.type) {
+        case types.DONOR_REQUEST:
+            return {
+                is_loading: true
+            }
+        case types.DONOR_LIST_SUCCESS:
+            return {
+                is_loading: false,
+                list: [...action.payload],
+                error: null
+            }
+        case types.DONOR_FAILURE:
+            return {
+                is_loading: false,
+                list: [],
+                error: action.error
+            }
+        default:
+            return state
+    }
+}
+
+
 // NOTIFICATION REDUCER
 const notificationReducer = (state = {}, action) => {
   switch (action.type) {
@@ -72,7 +127,9 @@ const notificationReducer = (state = {}, action) => {
 const reducers = {
   wallet: walletReducer,
   pool: poolReducer,
-  notification: notificationReducer
+  notification: notificationReducer,
+  transaction: transactionReducer,
+  donor: donorReducer
 }
 
 export default combineReducers(reducers)

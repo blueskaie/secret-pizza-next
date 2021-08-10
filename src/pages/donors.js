@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import * as styles from '../styles/pages/history.module.scss';
 import BaseLayout from '../layout/BaseLayout';
-import * as utils from '../utils';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDonorList } from '../actions'
 
 const History = () => {
+  const dispatch = useDispatch();
 
-  const transactions = useSelector(state => state.transaction.list);
+  useEffect(()=>{
+      dispatch(fetchDonorList());
+  }, []);
 
+  const donors = useSelector(state => state.donor.list);
   const tableHeaders = ['Secret Address', 'Status', 'Transaction', 'Amount', 'Time'];
 
   return (
@@ -22,13 +26,13 @@ const History = () => {
             </tr>
           </thead>
           <tbody>
-            {transactions && transactions.map((transaction, index) => {
+            {donors && donors.map((donor, index) => {
               return (<tr key={index}>
-                <td>{transaction.address}</td>
-                <td>{transaction.type}</td>
-                <td>{transaction.transaction_hash}</td>
-                <td>{ parseFloat(transaction.amount)/1000000 }</td>
-                <td>{transaction.createdAt}</td>
+                <td>{donor.address}</td>
+                <td>{donor.type}</td>
+                <td>{donor.transaction_hash}</td>
+                <td>{ parseFloat(donor.amount)/1000000 }</td>
+                <td>{donor.createdAt}</td>
               </tr>)
             })}
           </tbody>

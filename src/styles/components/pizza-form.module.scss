@@ -5,99 +5,79 @@
     min-height: 247px;
     display: flex;
     justify-content: center;
-    margin-top: 180px;
+    margin-top: 232px;
+    
+    font-size: 24px;
+    font-weight: bold;
     // align-self: center;
     .pizzaFormWrapper {
-      width: 576px;
-      height: 247px;
+      width: 776px;
+      // height: 347px;
       margin: 10px 10px;
       background: #FFFFFF;
-      border: 4px solid #501103;
+      border: 4px solid #E5E5E5;
       box-sizing: border-box;
       border-radius: 0 0 10px 10px;
-      display: flex;
-      flex-direction: column;
       padding: 0 30px 30px 30px;
       position: relative;
       .withdrawTab {
         cursor: pointer;
         position: absolute;
-        top: -44px;
-        width: 150px;
-        height: 40px;
+        top: -60px;
+        width: 360px;
+        height: 56px;
         left: -4px;
-        font-size: 24px;
         color: #FFFFFF;
         border-top-left-radius: 10px;
         display: flex;
         justify-content: center;
+        background: #F86813;
         p {
           margin: 0;
           align-self: center;
+          font-weight: bold;
+          font-size: 24px;
         }
-        .obliqueActive {
+        .oblique {
           position: absolute;
-          right: -40px;
+          right: -56px;
           width: 0;
           height: 0;
-          border: 20px solid #F86813;
-          border-right: 20px solid transparent;
-          border-top: 20px solid transparent;
-        }
-        .obliqueInActive {
-          position: absolute;
-          right: -40px;
-          width: 0;
-          height: 0;
-          border: 20px solid #501103;
-          border-right: 20px solid transparent;
-          border-top: 20px solid transparent;
+          border: 28px solid #F86813;
+          border-right: 28px solid transparent;
+          border-top: 28px solid transparent;
         }
       }
       .donateTab {
         cursor: pointer;
         position: absolute;
-        top: -44px;
-        width: 150px;
-        height: 40px;
+        top: -60px;
+        width: 360px;
+        height: 56px;
         right: -4px;
-        font-size: 24px;
         color: #FFFFFF;
         border-top-right-radius: 10px;
         display: flex;
         justify-content: center;
+        background: #AD362D;
         p {
           margin: 0;
           align-self: center;
+          font-weight: bold;
+          font-size: 24px;
         }
-        .obliqueActive {
+        .oblique {
           position: absolute;
-          left: -40px;
+          left: -56px;
           width: 0;
           height: 0;
-          border: 20px solid #501103;
-          border-left: 20px solid transparent;
-          border-top: 20px solid transparent;
+          border: 28px solid #AD362D;
+          border-left: 28px solid transparent;
+          border-bottom: 28px solid transparent;
         }
-        .obliqueInActive {
-          position: absolute;
-          left: -40px;
-          width: 0;
-          height: 0;
-          border: 20px solid #F86813;
-          border-left: 20px solid transparent;
-          border-top: 20px solid transparent;
-        }
-      }      
-      .active {
-        background: #F86813;
-      }
-      .inActive {
-        background: #501103;
       }
       .titleWrapper {
-        flex: 1;
-        display: flex;
+        margin-top: 47px;
         .title {
           align-self: center;
           text-align: left;
@@ -107,12 +87,12 @@
         }
       }
       .inputWrapper {
-        flex: 1;
+        margin-top: 20px;
         .input {
           width: 100%;
           background: #C9B3AC;
           border-radius: 10px;
-          height: 58px;
+          height: 78px;
           display: flex;
           .content {
             height: 50px;
@@ -129,6 +109,7 @@
         }
       }
       .balanceWrapper {
+        margin-top: 6px;
         text-align: right;
         color: #A57F73;
         font-size: 18px;
@@ -139,15 +120,28 @@
         padding-bottom: 10px;
       }
       .buttonWrapper {
-        flex: 1;
+        margin-top: 20px;
         .withdrawButton {
           cursor: pointer;
           width: 100%;
           background: #F86813;
+          border: none;
           border-radius: 10px;
           font-weight: bold;
           font-size: 24px;
-          height: 58px;
+          color: #FFFFFF;
+          height: 78px;
+        }
+        .donateButton {
+          cursor: pointer;
+          width: 100%;
+          background: #AD362D;
+          border: none;
+          border-radius: 10px;
+          font-weight: bold;
+          font-size: 24px;
+          color: #FFFFFF;
+          height: 78px;
         }
       }
     }

@@ -26,7 +26,9 @@ const SideBar = () => {
       </div>
       <div className={styles.routeWrapper}>
         <Link href='/'><div className={styles.routeItem}>Pizza</div></Link>
-        <Link href='/donate'><div className={styles.routeItem}>Donate</div></Link>
+        <Link href='/donors'><div className={styles.routeItem}>Donors</div></Link>
+        <Link href='https://bridge.scrt.network'><a target="_blank"><div className={styles.routeItem}><span>Bridge</span> <img src="img/ArrowSquareIn.png" alt="bridge" /></div></a></Link>
+        <Link href='https://app.secretswap.io'><a target="_blank"><div className={styles.routeItem}><span>Swap</span> <img src="img/ArrowSquareIn.png" alt="swap" /></div></a></Link>
         <Link href='/history'><div className={styles.routeItem}>History</div></Link>
       </div>
       <div className={styles.footWrapper}>

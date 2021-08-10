@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 
 const NavBar = () => {
   const pool = useSelector(state => state.pool.account);
+  const transactions = useSelector(state => state.transaction.list);
   const poolBalance = utils.getBalance(pool, "uscrt");
+  const recipients = utils.getRecipients(transactions);
+  const donors = utils.getDonors(transactions);
 
   return (
     <div className={styles.navBarWrapper}>
@@ -21,14 +24,14 @@ const NavBar = () => {
         <div className={styles.detailItem}>
           <div className={styles.subTitle}># of Recipients</div>
           <div className={styles.value}>
-            <div className={styles.number}>246</div>
+            <div className={styles.number}>{recipients}</div>
             <div className={styles.text}>users</div>
           </div>
         </div>
         <div className={styles.detailItem}>
           <div className={styles.subTitle}># of Donors</div>
           <div className={styles.value}>
-            <div className={styles.number}>35</div>
+            <div className={styles.number}>{donors}</div>
             <div className={styles.text}>donors</div>
           </div>
         </div>

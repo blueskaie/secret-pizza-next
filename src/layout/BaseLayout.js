@@ -4,15 +4,16 @@ import SideBar from './SideBar';
 import Notification from '../components/notification';
 import * as styles from '../styles/layout/base-layout.module.scss';
 import { useDispatch } from 'react-redux';
-import { getPoolData, getWalletData } from '../actions'
+import { getPoolData, fetchTxList, getWalletData } from '../actions'
 // import * as utils from '../utils';
 
 const BaseLayout = ({children}) => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-      dispatch(getPoolData());
-      dispatch(getWalletData());
+        dispatch(getPoolData());
+        dispatch(fetchTxList());
+    //   dispatch(getWalletData());
     }, []);
     return (
         <div>

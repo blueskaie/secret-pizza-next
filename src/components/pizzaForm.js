@@ -19,7 +19,7 @@ const PizzaForm = ({tab}) => {
 
     const wallet = useSelector(state => state.wallet.account);
     const recaptchaRef = React.createRef();
-    console.log("wallet=======>", wallet)
+
     useEffect(()=>{
         if (wallet) {
             setAddress(wallet.address);
@@ -87,7 +87,7 @@ const PizzaForm = ({tab}) => {
                     </div>
                     <ReCAPTCHA
                         ref={recaptchaRef}
-                        sitekey="6LdLv-obAAAAADTuFzTsN-p9QyCSClp-yHwkd2O5"//127.0.0.1
+                        sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPCHA_CLIENT_KEY}//127.0.0.1
                         onChange={onChange}
                     />
                     <div className={styles.buttonWrapper}>

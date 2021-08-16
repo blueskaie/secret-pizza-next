@@ -23,6 +23,9 @@
         height: 65px;
         td {
           text-align: center;
+          a {
+            color: white;
+          }
         }
         td:first-child {
           font-weight: bold;

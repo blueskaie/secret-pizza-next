@@ -26,7 +26,7 @@ const History = () => {
               return (<tr key={index}>
                 <td>{transaction.address}</td>
                 <td>{transaction.type}</td>
-                <td>{transaction.transaction_hash}</td>
+                <td><a href={`${process.env.NEXT_PUBLIC_SECRET_EXPLORER}/transactions/${transaction.transaction_hash}`} target="_blank">{transaction.transaction_hash}</a></td>
                 <td>{ parseFloat(transaction.amount)/1000000 }</td>
                 <td>{transaction.createdAt}</td>
               </tr>)

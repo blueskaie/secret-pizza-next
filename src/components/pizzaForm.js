@@ -6,7 +6,7 @@ import * as utils from '../utils';
 import ReCAPTCHA from "react-google-recaptcha";
 
 
-const PizzaForm = ({tab}) => {
+const PizzaForm = () => {
     const defaultWithdrawAmount = process.env.NEXT_PUBLIC_WITHDRAW_AMOUNT ? parseFloat(process.env.NEXT_PUBLIC_WITHDRAW_AMOUNT) : 0.25;
 
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const PizzaForm = ({tab}) => {
     const [address, setAddress] = useState('');
     const [balance, setBalance] = useState(0);
     const [donateAmount, setDonateAmount] = useState(0);
-    const [tabIndex, setTabIndex] = useState(tab);
+    const [tabIndex, setTabIndex] = useState(2);
     const [loading, setLoading] = useState(false);
 
     const wallet = useSelector(state => state.wallet.account);
@@ -49,7 +49,6 @@ const PizzaForm = ({tab}) => {
     }
 
     const donate = (e) => {
-        console.log("donateAmount=====>", donateAmount);
         if (donateAmount!=balance) {
             dispatch(sendDonate(donateAmount*1000000));
         } else {

@@ -44,7 +44,7 @@ const PizzaForm = () => {
         if (recaptchaValue) {
             dispatch(withdraw(defaultWithdrawAmount*1000000));
         } else {
-            dispatch(openNotification("You should pass google captcha to prove that you are human"));
+            dispatch(openNotification("You should pass google captcha to prove that you are human!"));
         }
     }
 

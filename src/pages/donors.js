@@ -11,7 +11,11 @@ const History = () => {
       dispatch(fetchDonorList());
   }, []);
 
-  const donors = useSelector(state => state.donor.list);
+  let donors = useSelector(state => state.donor.list);
+  if (donors) {
+    donors = donors.sort((a, b)=>parseFloat(b.amount)-parseFloat(a.amount));
+  }
+  console.log("donors=========>", donors);
   const tableHeaders = ['Secret Address', 'Status', 'Transaction', 'Amount', 'Time'];
 
   return (
@@ -32,7 +36,7 @@ const History = () => {
                 <td>{donor.type}</td>
                 <td><a href={`${process.env.NEXT_PUBLIC_SECRET_EXPLORER}/transactions/${donor.transaction_hash}`} target="_blank">{donor.transaction_hash}</a></td>
                 <td>{ parseFloat(donor.amount)/1000000 }</td>
-                <td>{donor.createdAt}</td>
+                <td>{donor.createdAt.replace("T", " ").replace("Z", "")}</td>
               </tr>)
             })}
           </tbody>

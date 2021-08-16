@@ -14,7 +14,7 @@ const PizzaForm = () => {
     const [address, setAddress] = useState('');
     const [balance, setBalance] = useState(0);
     const [donateAmount, setDonateAmount] = useState(0);
-    const [tabIndex, setTabIndex] = useState(2);
+    const [tabIndex, setTabIndex] = useState(1);
     const [loading, setLoading] = useState(false);
 
     const wallet = useSelector(state => state.wallet.account);

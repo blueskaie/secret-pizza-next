@@ -28,7 +28,7 @@ const History = () => {
                 <td>{transaction.type}</td>
                 <td><a href={`${process.env.NEXT_PUBLIC_SECRET_EXPLORER}/transactions/${transaction.transaction_hash}`} target="_blank">{transaction.transaction_hash}</a></td>
                 <td>{ parseFloat(transaction.amount)/1000000 }</td>
-                <td>{transaction.createdAt}</td>
+                <td>{transaction.createdAt.replace("T", " ").replace("Z", "")}</td>
               </tr>)
             })}
           </tbody>
